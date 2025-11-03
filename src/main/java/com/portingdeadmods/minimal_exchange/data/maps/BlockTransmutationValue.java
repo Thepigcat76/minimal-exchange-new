@@ -1,0 +1,13 @@
+package com.portingdeadmods.minimal_exchange.data.maps;
+
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.block.Block;
+
+public record BlockTransmutationValue(Block result, int matterCost) {
+    public static final Codec<BlockTransmutationValue> CODEC = RecordCodecBuilder.create(builder -> builder.group(
+            BuiltInRegistries.BLOCK.byNameCodec().fieldOf("result").forGetter(BlockTransmutationValue::result),
+            Codec.INT.optionalFieldOf("matterCost", 1).forGetter(BlockTransmutationValue::matterCost)
+    ).apply(builder, BlockTransmutationValue::new));
+}

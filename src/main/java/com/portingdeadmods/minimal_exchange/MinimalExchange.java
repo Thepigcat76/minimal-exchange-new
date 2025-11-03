@@ -4,12 +4,14 @@ import com.portingdeadmods.minimal_exchange.api.items.MatterItem;
 import com.portingdeadmods.minimal_exchange.capabilities.MECapabilities;
 import com.portingdeadmods.minimal_exchange.capabilities.matter.MatterComponentWrapper;
 import com.portingdeadmods.minimal_exchange.data.MEDataComponents;
+import com.portingdeadmods.minimal_exchange.data.MEDataMaps;
 import com.portingdeadmods.minimal_exchange.registries.*;
 import com.portingdeadmods.portingdeadlibs.api.config.PDLConfigHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
+import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -28,6 +30,7 @@ public final class MinimalExchange {
     public MinimalExchange(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::registerPayloads);
         modEventBus.addListener(this::registerCapabilities);
+        modEventBus.addListener(this::registerDataMaps);
 
         MECreativeTabs.TABS.register(modEventBus);
         MEDataComponents.DATA_COMPONENTS.register(modEventBus);
@@ -43,6 +46,12 @@ public final class MinimalExchange {
 
     private void registerPayloads(RegisterPayloadHandlersEvent event) {
         PayloadRegistrar registrar = event.registrar(MODID);
+    }
+
+    private void registerDataMaps(RegisterDataMapTypesEvent event) {
+        event.register(MEDataMaps.BLOCK_TRANSMUTATIONS);
+        event.register(MEDataMaps.ITEM_TRANSMUTATIONS);
+        event.register(MEDataMaps.ENTITY_TRANSMUTATIONS);
     }
 
     private void registerCapabilities(RegisterCapabilitiesEvent event) {

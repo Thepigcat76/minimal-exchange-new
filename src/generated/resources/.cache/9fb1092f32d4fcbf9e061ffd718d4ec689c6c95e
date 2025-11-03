@@ -1,1 +1,5 @@
-// 1.21.1	2025-11-03T16:17:33.501138013	Recipes
+// 1.21.1	2025-11-03T21:03:12.628652165	Recipes
+38cc77aa9abaa79fbfb26fe1c09287429728b0cf data/minimal_exchange/advancement/recipes/misc/iron_band.json
+d7a34f7dcb21e667a3b420ef079476089281859e data/minimal_exchange/advancement/recipes/misc/transmutation_stone.json
+4b20d7c83d466cf6f0bba375070376b356a7ded5 data/minimal_exchange/recipe/iron_band.json
+0a8ba06f0e1113d4eb2a754c59c17b1d1ce1058e data/minimal_exchange/recipe/transmutation_stone.json

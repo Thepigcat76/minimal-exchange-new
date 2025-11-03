@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
+import net.neoforged.neoforge.common.Tags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,13 +21,21 @@ public class EMRecipeProvider extends RecipeProvider {
     protected void buildRecipes(RecipeOutput output) {
         super.buildRecipes(output);
 
-//        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MEItems.EXAMPLE_ITEM.get())
-//                .pattern("IDI")
-//                .pattern("D D")
-//                .pattern("IDI")
-//                .define('I', Items.IRON_INGOT)
-//                .define('D', Items.DIAMOND)
-//                .unlockedBy("has_diamond", has(Items.DIAMOND))
-//                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MEItems.TRANSMUTATION_STONE.get())
+                .pattern("MMM")
+                .pattern("MDM")
+                .pattern("MMM")
+                .define('M', MEItems.MINIUM_SHARD)
+                .define('D', Items.DIAMOND)
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MEItems.IRON_BAND.get())
+                .pattern(" I ")
+                .pattern("I I")
+                .pattern(" I ")
+                .define('I', Tags.Items.INGOTS_IRON)
+                .unlockedBy("has_iron_ingot", has(Tags.Items.INGOTS_IRON))
+                .save(output);
     }
 }

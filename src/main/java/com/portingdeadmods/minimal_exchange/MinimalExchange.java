@@ -37,8 +37,10 @@ public final class MinimalExchange {
         MEItems.ITEMS.register(modEventBus);
         MESoundEvents.SOUND_EVENTS.register(modEventBus);
         MEBlocks.BLOCKS.register(modEventBus);
-        EMTranslations.TRANSLATIONS.register(modEventBus);
-        EMBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);
+        MERecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
+
+        METranslations.TRANSLATIONS.register(modEventBus);
+        MEBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);
         EMMenuTypes.MENU_TYPES.register(modEventBus);
 
         PDLConfigHelper.registerConfig(MEConfig.class, ModConfig.Type.COMMON).register(modContainer);

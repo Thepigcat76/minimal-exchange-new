@@ -5,7 +5,7 @@ import com.portingdeadmods.minimal_exchange.api.items.MatterItem;
 import com.portingdeadmods.minimal_exchange.api.items.MatterToolItem;
 import com.portingdeadmods.minimal_exchange.capabilities.MECapabilities;
 import com.portingdeadmods.minimal_exchange.capabilities.matter.MatterStorage;
-import com.portingdeadmods.minimal_exchange.registries.EMTranslations;
+import com.portingdeadmods.minimal_exchange.registries.METranslations;
 import com.portingdeadmods.minimal_exchange.registries.METoolTiers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -57,7 +57,7 @@ public class MatterSwordItem extends SwordItem implements MatterItem, MatterTool
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         MatterStorage matterComponent = stack.getCapability(MECapabilities.MATTER_ITEM);
-        tooltipComponents.add(EMTranslations.TOOLTIP_MATTER_STORED.component(matterComponent.getMatter(), matterComponent.getMatterCapacity())
+        tooltipComponents.add(METranslations.TOOLTIP_MATTER_STORED.component(matterComponent.getMatter(), matterComponent.getMatterCapacity())
                 .withColor(getBarColor(stack)));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }

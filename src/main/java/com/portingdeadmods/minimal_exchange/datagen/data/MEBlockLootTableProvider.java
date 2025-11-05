@@ -11,10 +11,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
-public class EMBlockLootTableProvider extends BlockLootSubProvider {
+public class MEBlockLootTableProvider extends BlockLootSubProvider {
     private final Set<Block> knownBlocks = new ReferenceOpenHashSet<>();
 
-    public EMBlockLootTableProvider(HolderLookup.Provider registries) {
+    public MEBlockLootTableProvider(HolderLookup.Provider registries) {
         super(Set.of(), FeatureFlags.VANILLA_SET, registries);
     }
 

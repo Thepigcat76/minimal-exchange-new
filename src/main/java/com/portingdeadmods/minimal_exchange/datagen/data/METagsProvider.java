@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-public class EMTagsProvider {
+public class METagsProvider {
     public static void createTagProviders(DataGenerator generator, PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper, boolean isServer) {
         BlocksProvider provider = new BlocksProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(isServer, provider);

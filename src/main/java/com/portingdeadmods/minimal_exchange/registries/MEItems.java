@@ -1,13 +1,17 @@
 package com.portingdeadmods.minimal_exchange.registries;
 
 import com.portingdeadmods.minimal_exchange.MinimalExchange;
+import com.portingdeadmods.minimal_exchange.content.items.AlchemicalFireBlockItem;
 import com.portingdeadmods.minimal_exchange.content.items.DestructionCatalystItem;
 import com.portingdeadmods.minimal_exchange.content.items.TransmutationStoneItem;
 import com.portingdeadmods.minimal_exchange.content.items.tools.*;
 import com.portingdeadmods.minimal_exchange.data.MEDataComponents;
 import com.portingdeadmods.portingdeadlibs.api.utils.PDLDeferredRegisterItems;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.function.Supplier;
@@ -23,6 +27,7 @@ public final class MEItems {
     public static final DeferredItem<Item> MINIUM_SHARD = ITEMS.registerSimpleItem("minium_shard");
     public static final DeferredItem<Item> IRON_BAND = ITEMS.registerSimpleItem("iron_band");
     public static final DeferredItem<Item> ALCHEMICAL_ASHES = ITEMS.registerSimpleItem("alchemical_ash");
+    public static final DeferredItem<Item> ASHEN_INGOT = ITEMS.registerSimpleItem("ashen_ingot");
     public static final DeferredItem<Item> MATTER = ITEMS.registerSimpleItem("matter");
 
     public static final DeferredItem<MatterSwordItem> MATTER_SWORD = ITEMS.register("matter_sword", () -> new MatterSwordItem(METoolTiers.MATTER, TOOL_PROPERTIES.get()));
@@ -35,5 +40,7 @@ public final class MEItems {
             () -> new DestructionCatalystItem(new Item.Properties().component(MEDataComponents.MATTER.get(), 0).stacksTo(1)));
     public static final DeferredItem<TransmutationStoneItem> TRANSMUTATION_STONE = ITEMS.register("transmutation_stone",
             () -> new TransmutationStoneItem(new Item.Properties().component(MEDataComponents.MATTER.get(), 0).stacksTo(1)));
+
+    public static final DeferredItem<BlockItem> ALCHEMICAL_FIRE = ITEMS.registerItemNoCreative("alchemical_fire", AlchemicalFireBlockItem::new);
 
 }

@@ -6,6 +6,10 @@
     "minecraft:dirt": {
       "result": "minecraft:cobblestone"
     },
+    "minecraft:fire": {
+      "matterCost": 50,
+      "result": "minimal_exchange:alchemical_fire"
+    },
     "minecraft:grass_block": {
       "result": "minecraft:sand"
     },

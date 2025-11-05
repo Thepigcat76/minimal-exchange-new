@@ -1,6 +1,10 @@
-// 1.21.1	2025-11-03T17:49:00.931334788	Item Models: minimal_exchange
+// 1.21.1	2025-11-05T14:45:12.811914023	Item Models: minimal_exchange
 fecd39421f9d3dc814b582a4932c26e2733bde6e assets/minimal_exchange/models/item/alchemical_ash.json
+923060de39bfc384c34c8ea4e880201d26162a47 assets/minimal_exchange/models/item/alchemical_fire.json
 a990bbc5c10f90a4013c7d76ab3f18a829964763 assets/minimal_exchange/models/item/alchemical_stone.json
+9af6aca9ce79e1a4a5f2877f5fc28ab3f10f74e9 assets/minimal_exchange/models/item/ashen_ingot.json
+1a9ddc656762e2bf8a79b88a2df23271a48187e3 assets/minimal_exchange/models/item/crucible.json
+7f80960d748a4a6adfa6b7742a5eee5a171948a1 assets/minimal_exchange/models/item/crucible_extension.json
 4b8f2e5841ae8f566d3bda2bd31f81010b1c3f2f assets/minimal_exchange/models/item/destruction_catalyst.json
 8b2b82b0a5e5efb8ea24e8bf51fcddd820ee7903 assets/minimal_exchange/models/item/iron_band.json
 adb98a0f8e4a245a4eb0c4e8f5099a754a6dd067 assets/minimal_exchange/models/item/matter.json

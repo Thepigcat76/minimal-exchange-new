@@ -5,15 +5,13 @@ import com.portingdeadmods.minimal_exchange.api.items.MatterItem;
 import com.portingdeadmods.minimal_exchange.api.items.MatterToolItem;
 import com.portingdeadmods.minimal_exchange.capabilities.MECapabilities;
 import com.portingdeadmods.minimal_exchange.capabilities.matter.MatterStorage;
-import com.portingdeadmods.minimal_exchange.data.MEDataComponents;
-import com.portingdeadmods.minimal_exchange.registries.EMTranslations;
+import com.portingdeadmods.minimal_exchange.registries.METranslations;
 import com.portingdeadmods.minimal_exchange.registries.METoolTiers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
@@ -59,7 +57,7 @@ public class MatterPickaxeItem extends PickaxeItem implements MatterItem, Matter
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         MatterStorage matterComponent = stack.getCapability(MECapabilities.MATTER_ITEM);
-        tooltipComponents.add(EMTranslations.TOOLTIP_MATTER_STORED.component(matterComponent.getMatter(), matterComponent.getMatterCapacity())
+        tooltipComponents.add(METranslations.TOOLTIP_MATTER_STORED.component(matterComponent.getMatter(), matterComponent.getMatterCapacity())
                 .withColor(getBarColor(stack)));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }

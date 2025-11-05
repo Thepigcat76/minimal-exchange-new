@@ -2,7 +2,7 @@ package com.portingdeadmods.minimal_exchange.api.items;
 
 import com.portingdeadmods.minimal_exchange.capabilities.MECapabilities;
 import com.portingdeadmods.minimal_exchange.capabilities.matter.MatterStorage;
-import com.portingdeadmods.minimal_exchange.registries.EMTranslations;
+import com.portingdeadmods.minimal_exchange.registries.METranslations;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.item.Item;
@@ -39,7 +39,7 @@ public abstract class SimpleMatterItem extends Item implements MatterItem {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         MatterStorage matterComponent = stack.getCapability(MECapabilities.MATTER_ITEM);
-        tooltipComponents.add(EMTranslations.TOOLTIP_MATTER_STORED.component(matterComponent.getMatter(), matterComponent.getMatterCapacity())
+        tooltipComponents.add(METranslations.TOOLTIP_MATTER_STORED.component(matterComponent.getMatter(), matterComponent.getMatterCapacity())
                 .withColor(getBarColor(stack)));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }

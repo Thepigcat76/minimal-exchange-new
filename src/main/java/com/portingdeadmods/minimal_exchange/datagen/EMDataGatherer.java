@@ -1,12 +1,12 @@
 package com.portingdeadmods.minimal_exchange.datagen;
 
 import com.portingdeadmods.minimal_exchange.MinimalExchange;
-import com.portingdeadmods.minimal_exchange.datagen.assets.EMBlockStateProvider;
+import com.portingdeadmods.minimal_exchange.datagen.assets.MEBlockStateProvider;
 import com.portingdeadmods.minimal_exchange.datagen.assets.MEEnUsLangProvider;
 import com.portingdeadmods.minimal_exchange.datagen.assets.MEItemModelProvider;
-import com.portingdeadmods.minimal_exchange.datagen.data.EMBlockLootTableProvider;
-import com.portingdeadmods.minimal_exchange.datagen.data.EMRecipeProvider;
-import com.portingdeadmods.minimal_exchange.datagen.data.EMTagsProvider;
+import com.portingdeadmods.minimal_exchange.datagen.data.MEBlockLootTableProvider;
+import com.portingdeadmods.minimal_exchange.datagen.data.MERecipeProvider;
+import com.portingdeadmods.minimal_exchange.datagen.data.METagsProvider;
 import com.portingdeadmods.minimal_exchange.datagen.data.MEDataMapProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -31,14 +31,14 @@ public final class EMDataGatherer {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeClient(), new EMBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new MEBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new MEItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new MEEnUsLangProvider(packOutput));
 
-        EMTagsProvider.createTagProviders(generator, packOutput, lookupProvider, existingFileHelper, event.includeServer());
-        generator.addProvider(event.includeServer(), new EMRecipeProvider(packOutput, lookupProvider));
+        METagsProvider.createTagProviders(generator, packOutput, lookupProvider, existingFileHelper, event.includeServer());
+        generator.addProvider(event.includeServer(), new MERecipeProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(
-                new LootTableProvider.SubProviderEntry(EMBlockLootTableProvider::new, LootContextParamSets.BLOCK)
+                new LootTableProvider.SubProviderEntry(MEBlockLootTableProvider::new, LootContextParamSets.BLOCK)
         ), lookupProvider));
 
         generator.addProvider(event.includeServer(), new MEDataMapProvider(packOutput, lookupProvider));

@@ -1,8 +1,7 @@
 package com.portingdeadmods.minimal_exchange.content.blockentities;
 
 import com.portingdeadmods.minimal_exchange.content.menus.ExampleMenu;
-import com.portingdeadmods.minimal_exchange.registries.EMBlockEntityTypes;
-import com.portingdeadmods.minimal_exchange.registries.EMTranslations;
+import com.portingdeadmods.minimal_exchange.registries.METranslations;
 import com.portingdeadmods.portingdeadlibs.api.blockentities.ContainerBlockEntity;
 import com.portingdeadmods.portingdeadlibs.utils.capabilities.HandlerUtils;
 import net.minecraft.core.BlockPos;
@@ -24,7 +23,7 @@ public class ExampleBlockEntity extends ContainerBlockEntity implements MenuProv
 
     @Override
     public Component getDisplayName() {
-        return EMTranslations.EXAMPLE_SCREEN_TITLE.component();
+        return METranslations.EXAMPLE_SCREEN_TITLE.component();
     }
 
     @Override

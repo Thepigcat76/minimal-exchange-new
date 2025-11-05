@@ -1,3 +1,7 @@
-// 1.21.1	2025-11-03T16:39:05.225792576	Block States: minimal_exchange
+// 1.21.1	2025-11-05T16:09:15.984740747	Block States: minimal_exchange
 bac77f1da3a0f4ed60e13763927612265167dd6c assets/minimal_exchange/blockstates/alchemical_stone.json
+9d301cb45b1b08443f58d1be520b798af04955b5 assets/minimal_exchange/blockstates/crucible.json
+738f58403480c7e378b0671c072315b37a0ffb9d assets/minimal_exchange/blockstates/crucible_extension.json
 6cb80b38c1b15d4b83dca0bc5da8bf17c509f80d assets/minimal_exchange/models/block/alchemical_stone.json
+fdbd174063eff92535d6f38aa2b17e340bb20f3a assets/minimal_exchange/models/block/crucible.json
+609322da39a966d8f4f2129a81a5468e53489a14 assets/minimal_exchange/models/block/crucible_connected.json

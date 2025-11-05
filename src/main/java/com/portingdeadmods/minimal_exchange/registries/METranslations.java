@@ -3,13 +3,8 @@ package com.portingdeadmods.minimal_exchange.registries;
 import com.portingdeadmods.minimal_exchange.MinimalExchange;
 import com.portingdeadmods.portingdeadlibs.api.translations.*;
 
-public final class EMTranslations {
+public final class METranslations {
     public static final DeferredTranslationRegister TRANSLATIONS = DeferredTranslationRegister.createTranslations(MinimalExchange.MODID);
-
-    // -- Messages --
-    private static final DefaultTranslationCategory MESSAGES_CATEGORY = TRANSLATIONS.createCategory("messages");
-
-    public static final DeferredTranslation<TranslatableConstant> NICE_MESSAGE = MESSAGES_CATEGORY.registerWithDefault("nice_message", "Hello, silly :3");
 
     // -- Creative Tabs --
     private static final DefaultTranslationCategory CREATIVE_TAB_CATEGORY = TRANSLATIONS.createCategory("creative_tabs");
@@ -25,4 +20,9 @@ public final class EMTranslations {
     private static final DefaultTranslationCategory TOOLTIP_CATEGORY = TRANSLATIONS.createCategory("tooltip");
 
     public static final DeferredTranslation<TranslatableConstant> TOOLTIP_MATTER_STORED = CREATIVE_TAB_CATEGORY.registerWithDefault("matter_stored", "Matter Stored: %d/%d");
+
+    // -- Tooltips --
+    private static final DefaultTranslationCategory JEI_CATEGORY = TRANSLATIONS.createCategory("jei");
+
+    public static final DeferredTranslation<TranslatableConstant> ALCHEMICAL_FIRE_TRANSMUTATION_CATEGORY = CREATIVE_TAB_CATEGORY.registerWithDefault("category.name.alchemical_fire_transmutation", "Alchemical Fire Transmutation");
 }

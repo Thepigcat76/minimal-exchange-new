@@ -4,6 +4,7 @@ import com.portingdeadmods.minimal_exchange.data.MEDataMaps;
 import com.portingdeadmods.minimal_exchange.data.maps.BlockTransmutationValue;
 import com.portingdeadmods.minimal_exchange.data.maps.EntityTransmutationValue;
 import com.portingdeadmods.minimal_exchange.data.maps.ItemTransmutationValue;
+import com.portingdeadmods.minimal_exchange.registries.MEBlocks;
 import com.portingdeadmods.portingdeadlibs.utils.RegistryUtils;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -55,6 +56,8 @@ public class MEDataMapProvider extends net.neoforged.neoforge.common.data.DataMa
         blockTransmutation(Blocks.DIRT, Blocks.COBBLESTONE, 1);
         blockTransmutation(Blocks.COBBLESTONE, Blocks.GRASS_BLOCK, 1);
         blockTransmutation(Blocks.GRASS_BLOCK, Blocks.SAND, 1);
+
+        blockTransmutation(Blocks.FIRE, MEBlocks.ALCHEMICAL_FIRE.get(), 50);
 
         entityTransmutation(EntityType.CHICKEN, EntityType.PARROT, 1);
         entityTransmutation(EntityType.PARROT, EntityType.BAT, 1);

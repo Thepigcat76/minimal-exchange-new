@@ -27,6 +27,7 @@ public class MEItemModelProvider extends ItemModelProvider {
 
         basicItem(MEItems.MINIUM_SHARD.get());
         basicItem(MEItems.IRON_BAND.get());
+        basicItem(MEItems.ASHEN_INGOT.get());
         basicItem(MEItems.ALCHEMICAL_ASHES.get());
         basicItem(MEItems.MATTER.get());
 
@@ -39,6 +40,13 @@ public class MEItemModelProvider extends ItemModelProvider {
         basicItem(MEItems.DESTRUCTION_CATALYST.get());
         basicItem(MEItems.TRANSMUTATION_STONE.get());
 
+        fireItem(MEItems.ALCHEMICAL_FIRE);
+
+    }
+
+    private ItemModelBuilder fireItem(ItemLike item) {
+        ResourceLocation itemKey = key(item);
+        return this.getBuilder(itemKey.toString()).parent(new ModelFile.UncheckedModelFile("item/generated")).texture("layer0", itemKey.withPrefix("block/").withSuffix("_0"));
     }
 
     private static @NotNull ResourceLocation key(ItemLike item) {

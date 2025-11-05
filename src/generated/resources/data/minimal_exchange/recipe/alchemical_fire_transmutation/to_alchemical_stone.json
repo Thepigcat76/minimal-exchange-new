@@ -1,0 +1,10 @@
+{
+  "type": "minimal_exchange:alchemical_fire_transmutation",
+  "input": {
+    "tag": "c:stones"
+  },
+  "result": {
+    "count": 1,
+    "id": "minimal_exchange:alchemical_stone"
+  }
+}

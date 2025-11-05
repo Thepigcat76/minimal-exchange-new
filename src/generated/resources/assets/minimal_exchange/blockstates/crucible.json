@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "connected_top=false": {
+      "model": "minimal_exchange:block/crucible"
+    },
+    "connected_top=true": {
+      "model": "minimal_exchange:block/crucible_connected"
+    }
+  }
+}

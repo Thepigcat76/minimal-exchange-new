@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minimal_exchange:ashen_ingot"
+    },
+    "M": {
+      "item": "minimal_exchange:matter"
+    }
+  },
+  "pattern": [
+    "MMM",
+    " A ",
+    " A "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minimal_exchange:matter_pickaxe"
+  }
+}

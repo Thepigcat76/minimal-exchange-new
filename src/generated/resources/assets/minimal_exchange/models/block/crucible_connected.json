@@ -1,0 +1,11 @@
+{
+  "parent": "minimal_exchange:block/crucible_base",
+  "textures": {
+    "0": "minimal_exchange:block/crucible_connected",
+    "1": "minimal_exchange:block/crucible_top",
+    "2": "minimal_exchange:block/crucible_extras",
+    "3": "minimal_exchange:block/crucible_bottom",
+    "4": "minimal_exchange:block/crucible_inside",
+    "5": "minimal_exchange:block/crucible_top_inside"
+  }
+}

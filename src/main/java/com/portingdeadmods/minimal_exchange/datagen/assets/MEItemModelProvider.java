@@ -40,6 +40,9 @@ public class MEItemModelProvider extends ItemModelProvider {
         basicItem(MEItems.DESTRUCTION_CATALYST.get());
         basicItem(MEItems.TRANSMUTATION_STONE.get());
 
+        basicItem(MEItems.ALCHEMICAL_BAG.get())
+                .texture("layer1", modLoc("item/alchemical_bag_overlay"));
+
         fireItem(MEItems.ALCHEMICAL_FIRE);
 
     }

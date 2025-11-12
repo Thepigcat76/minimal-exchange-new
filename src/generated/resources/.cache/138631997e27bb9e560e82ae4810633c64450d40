@@ -1,5 +1,6 @@
-// 1.21.1	2025-11-05T14:45:12.811914023	Item Models: minimal_exchange
+// 1.21.1	2025-11-09T11:28:36.473417968	Item Models: minimal_exchange
 fecd39421f9d3dc814b582a4932c26e2733bde6e assets/minimal_exchange/models/item/alchemical_ash.json
+6f331da36e80b0b7ef10ac9715e37c525b25ac9b assets/minimal_exchange/models/item/alchemical_bag.json
 923060de39bfc384c34c8ea4e880201d26162a47 assets/minimal_exchange/models/item/alchemical_fire.json
 a990bbc5c10f90a4013c7d76ab3f18a829964763 assets/minimal_exchange/models/item/alchemical_stone.json
 9af6aca9ce79e1a4a5f2877f5fc28ab3f10f74e9 assets/minimal_exchange/models/item/ashen_ingot.json

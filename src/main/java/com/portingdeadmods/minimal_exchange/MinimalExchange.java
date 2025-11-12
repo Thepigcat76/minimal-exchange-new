@@ -7,8 +7,11 @@ import com.portingdeadmods.minimal_exchange.data.MEDataComponents;
 import com.portingdeadmods.minimal_exchange.data.MEDataMaps;
 import com.portingdeadmods.minimal_exchange.registries.*;
 import com.portingdeadmods.portingdeadlibs.api.config.PDLConfigHelper;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
+import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.items.ComponentItemHandler;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
@@ -41,7 +44,7 @@ public final class MinimalExchange {
 
         METranslations.TRANSLATIONS.register(modEventBus);
         MEBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);
-        EMMenuTypes.MENU_TYPES.register(modEventBus);
+        MEMenuTypes.MENU_TYPES.register(modEventBus);
 
         PDLConfigHelper.registerConfig(MEConfig.class, ModConfig.Type.COMMON).register(modContainer);
     }
@@ -57,7 +60,6 @@ public final class MinimalExchange {
     }
 
     private void registerCapabilities(RegisterCapabilitiesEvent event) {
-        //event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, EMBlockEntityTypes.EXAMPLE.get(), ContainerBlockEntity::getItemHandlerOnSide);
         event.registerItem(
                 MECapabilities.MATTER_ITEM,
                 (item, ctx) -> new MatterComponentWrapper(item, ((MatterItem) item.getItem()).getMatterCapacity(item)),
@@ -69,6 +71,8 @@ public final class MinimalExchange {
                 MEItems.MATTER_SHOVEL.get(),
                 MEItems.MATTER_HOE.get()
         );
+        event.registerItem(Capabilities.ItemHandler.ITEM, (item, ctx) -> new ComponentItemHandler(item, DataComponents.CONTAINER, 54),
+                MEItems.ALCHEMICAL_BAG.get());
     }
 
     public static ResourceLocation rl(String path) {

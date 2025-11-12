@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "connected_bottom=false,connected_top=false": {
       "model": "minimal_exchange:block/crucible_extension"
+    },
+    "connected_bottom=false,connected_top=true": {
+      "model": "minimal_exchange:block/crucible_extension_connected_top"
+    },
+    "connected_bottom=true,connected_top=false": {
+      "model": "minimal_exchange:block/crucible_extension_connected_bottom"
+    },
+    "connected_bottom=true,connected_top=true": {
+      "model": "minimal_exchange:block/crucible_extension_connected_both"
     }
   }
 }

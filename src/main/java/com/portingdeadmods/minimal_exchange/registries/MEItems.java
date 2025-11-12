@@ -1,15 +1,21 @@
 package com.portingdeadmods.minimal_exchange.registries;
 
 import com.portingdeadmods.minimal_exchange.MinimalExchange;
+import com.portingdeadmods.minimal_exchange.content.items.AlchemicalBagItem;
 import com.portingdeadmods.minimal_exchange.content.items.AlchemicalFireBlockItem;
 import com.portingdeadmods.minimal_exchange.content.items.DestructionCatalystItem;
 import com.portingdeadmods.minimal_exchange.content.items.TransmutationStoneItem;
 import com.portingdeadmods.minimal_exchange.content.items.tools.*;
 import com.portingdeadmods.minimal_exchange.data.MEDataComponents;
 import com.portingdeadmods.portingdeadlibs.api.utils.PDLDeferredRegisterItems;
+import io.netty.util.Attribute;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.util.FastColor;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.DyedItemColor;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -43,4 +49,8 @@ public final class MEItems {
 
     public static final DeferredItem<BlockItem> ALCHEMICAL_FIRE = ITEMS.registerItemNoCreative("alchemical_fire", AlchemicalFireBlockItem::new);
 
+    public static final DeferredItem<AlchemicalBagItem> ALCHEMICAL_BAG = ITEMS.registerNoCreative("alchemical_bag", () -> new AlchemicalBagItem(new Item.Properties()
+            .stacksTo(1)
+            .component(DataComponents.DYED_COLOR, new DyedItemColor(FastColor.ARGB32.color(255, 255, 255), false))
+            .component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
 }

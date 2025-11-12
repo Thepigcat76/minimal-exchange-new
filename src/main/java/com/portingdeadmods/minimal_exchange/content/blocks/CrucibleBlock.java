@@ -1,10 +1,13 @@
 package com.portingdeadmods.minimal_exchange.content.blocks;
 
 import com.mojang.serialization.MapCodec;
+import com.portingdeadmods.minimal_exchange.content.blockentities.CrucibleBlockEntity;
+import com.portingdeadmods.minimal_exchange.content.blockentities.CrucibleExtensionBlockEntity;
 import com.portingdeadmods.minimal_exchange.registries.MEBlockEntityTypes;
 import com.portingdeadmods.minimal_exchange.registries.MEBlocks;
 import com.portingdeadmods.portingdeadlibs.api.blockentities.ContainerBlockEntity;
 import com.portingdeadmods.portingdeadlibs.api.blocks.ContainerBlock;
+import com.portingdeadmods.portingdeadlibs.utils.BlockUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -22,6 +25,9 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.stream.Stream;
 
 public class CrucibleBlock extends ContainerBlock {
@@ -74,6 +80,27 @@ public class CrucibleBlock extends ContainerBlock {
             return state.setValue(CONNECTED_TOP, neighborState.is(MEBlocks.CRUCIBLE_EXTENSION));
         }
         return state;
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            CrucibleBlockEntity be = BlockUtils.getBE(CrucibleBlockEntity.class, level, pos);
+
+            Set<BlockPos> removedPositions = new LinkedHashSet<>();
+            for (BlockPos extensionPos : be.getExtensionPositions()) {
+                CrucibleExtensionBlockEntity extensionBe = BlockUtils.getBE(CrucibleExtensionBlockEntity.class, level, extensionPos);
+                if (extensionBe != null) {
+                    extensionBe.setMainCruciblePos(null);
+                    removedPositions.add(extensionPos);
+                }
+            }
+            for (BlockPos blockPos : removedPositions) {
+                be.removeExtensionPos(blockPos);
+            }
+        }
+
+        super.onRemove(state, level, pos, newState, movedByPiston);
     }
 
     @Override

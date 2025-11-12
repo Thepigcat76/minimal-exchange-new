@@ -2,9 +2,6 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "minimal_exchange:block/crucible_extension_side",
-		"1": "minimal_exchange:block/crucible_top",
-		"2": "minimal_exchange:block/crucible_extension_inside",
 		"particle": "minimal_exchange:block/crucible_extension_side"
 	},
 	"elements": [

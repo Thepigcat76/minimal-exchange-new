@@ -1,16 +1,15 @@
 package com.portingdeadmods.minimal_exchange.registries;
 
 import com.portingdeadmods.minimal_exchange.MinimalExchange;
-import com.portingdeadmods.minimal_exchange.content.menus.ExampleMenu;
+import com.portingdeadmods.minimal_exchange.content.menus.AlchemicalBagMenu;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.inventory.MenuType;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.function.Supplier;
-
-public final class EMMenuTypes {
+public final class MEMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(BuiltInRegistries.MENU, MinimalExchange.MODID);
 
-    public static final Supplier<MenuType<ExampleMenu>> EXAMPLE = MENU_TYPES.register("example", () -> IMenuTypeExtension.create(ExampleMenu::new));
+    public static final DeferredHolder<MenuType<?>, MenuType<AlchemicalBagMenu>> ALCHEMICAL_BAG = MENU_TYPES.register("alchemical_bag", () -> IMenuTypeExtension.create(AlchemicalBagMenu::new));
 }

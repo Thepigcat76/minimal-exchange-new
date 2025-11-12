@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minimal_exchange:item/alchemical_bag",
+    "layer1": "minimal_exchange:item/alchemical_bag_overlay"
+  }
+}
